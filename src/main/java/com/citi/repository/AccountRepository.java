@@ -3,7 +3,6 @@ package com.citi.repository;
 import com.citi.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
 /**
  * AccountRepository java interface is extending the JpaRepository. 
  * 

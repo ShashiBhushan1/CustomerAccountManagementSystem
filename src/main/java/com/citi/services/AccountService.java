@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.citi.model.Account;
 import com.citi.repository.AccountRepository;
+import com.citi.servicesImpl.AccountServiceImpl;
 
 
 /**
@@ -14,7 +15,7 @@ import com.citi.repository.AccountRepository;
  */
 @Service
 @Transactional
-public class AccountService {
+public class AccountService implements AccountServiceImpl{
 
 	/**
 	 * Instance of accountRepository.

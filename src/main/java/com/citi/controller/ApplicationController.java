@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.citi.model.Account;
 import com.citi.services.AccountService;
 
-
 /**
  * 
  * ApplicationController java class is controller class containing the methods of 
@@ -34,7 +33,7 @@ public class ApplicationController {
 	private AccountService accountService; 
 
 	/**
-	 * viewHomePage() is for viewing the accounts. 
+	 * viewHomePage() method is for viewing the accounts. 
 	 * @return String
 	 * @param Model object
 	 */
@@ -47,7 +46,7 @@ public class ApplicationController {
 	}
 
 	/**
-	 * showNewAccountPage() is for show New Account. 
+	 * showNewAccountPage() method is for show New Account. 
 	 * @return String
 	 * @param Model object
 	 */
@@ -61,7 +60,7 @@ public class ApplicationController {
 	}
 
 	/**
-	 * saveAccount() is for saving Account. 
+	 * saveAccount() method is for saving Account. 
 	 * @return String
 	 * @param Model object
 	 */
@@ -69,12 +68,11 @@ public class ApplicationController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveAccount(@ModelAttribute("account") Account account) {
 		accountService.save(account);
-		
 		return "redirect:/";
 	}
 
 	/**
-	 * showEditAccountPage() is for editing the accounts. 
+	 * showEditAccountPage() method is for editing the accounts. 
 	 * @return ModelAndView
 	 * @param id
 	 */
@@ -83,12 +81,12 @@ public class ApplicationController {
 	public String showEditAccountPage(@PathVariable(name = "id") int id) {
 		ModelAndView mav = new ModelAndView("editAccount");
 		//Account account = accountService.get(id);
-	//	mav.addObject("account", account);
+	    //mav.addObject("account", account);
 		return "editAccount";
 	}
 
 	/**
-	 * deleteAccount() is for deleting the accounts. 
+	 * deleteAccount() method is for deleting the accounts. 
 	 * @return String
 	 * @param id
 	 */
