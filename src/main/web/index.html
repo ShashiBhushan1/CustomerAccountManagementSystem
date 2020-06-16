@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Account Management</title>
+</head>
+
+<body>
+<div align="center">
+    <h1>Account List</h1>
+    <a href="new">Create New Account</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Customer First Name</th>
+                <th>Customer Last Name</th>
+                <th>Customer Phone No</th>
+                <th>Customer Address</th>
+                <th>Customer SSN No</th>
+                <th>Account No</th>
+                <th>Account Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="account : ${listAccounts}">
+            	<td th:text="${account.firstName}">First Name</td>
+                <td th:text="${account.lastName}">Last Name</td>
+                <td th:text="${account.address}">Address</td>
+                <td th:text="${account.phoneNo}">Phone No</td>
+                <td th:text="${account.ssnNo}">SSN No</td>
+                <td th:text="${account.accountNo}">Account No</td>
+                <td th:text="${account.accountType}">Account Type</td>
+                <td th:text="${amount.amount}">Amount</td> 
+               
+                <td>
+                	<a th:href="@{'/edit/' + ${account.accountNo}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/delete/' + ${account.accountNo}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>
